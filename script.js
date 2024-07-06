@@ -6,8 +6,11 @@ const DEFAULT_SQUARES_COLOR = "black";
 const DEFAULT_SQUARES_BORDER = "1px solid black";
 
 const container = document.querySelector(".container");
+
 const toggleColorBtn = document.querySelector("#toggle-color");
 const toggleBorderBtn = document.querySelector("#toggle-border");
+const toggleBtns = document.querySelectorAll(".toggle");
+
 const sizeBtn = document.querySelector("#size");
 const clearBtn = document.querySelector("#clear");
 
@@ -63,6 +66,12 @@ toggleBorderBtn.addEventListener("click", e => {
          }
          currentBorder = DEFAULT_SQUARES_BORDER;
      }
+});
+
+toggleBtns.forEach(button => {
+    button.addEventListener("click", e => {
+        button.classList.toggle("toggle-active");
+    });
 });
 
 sizeBtn.addEventListener("click", e => {
